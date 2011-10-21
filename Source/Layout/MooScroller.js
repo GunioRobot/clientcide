@@ -37,7 +37,7 @@ var MooScroller = new Class({
 		this.knob = document.id(knob);
 		this.track = this.knob.getParent();
 		this.setPositions();
-		
+
 		if (this.horz && this.options.width) {
 			this.wrapper = new Element('div');
 			this.content.getChildren().each(function(child){
@@ -45,7 +45,7 @@ var MooScroller = new Class({
 			}, this);
 			this.wrapper.inject(this.content).setStyle('width', this.options.width);
 		}
-		
+
 
 		this.bound = {
 			'start': this.start.bind(this),
@@ -59,7 +59,7 @@ var MooScroller = new Class({
 		this.mouse = {};
 		this.update();
 		this.attach();
-		
+
 		this.clearScroll = function (){
 			clearInterval(this.scrolling);
 		}.bind(this);
@@ -105,7 +105,7 @@ var MooScroller = new Class({
 			this.hidden = this.knobSize == this.trackSize;
 			this.track.setStyle('opacity', this.hidden?0:1);
 		}
-		
+
 		this.scrollRatio = this.contentScrollSize / this.trackSize;
 		this.knob.setStyle(plain.toLowerCase(), this.knobSize);
 
@@ -171,7 +171,7 @@ var MooScroller = new Class({
 		event.stop();
 	},
 
-	
+
 	start: function(event){
 		var axis = this.horz?'x':'y';
 		this.mouse.start = event.page[axis];
